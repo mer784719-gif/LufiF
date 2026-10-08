@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Lufi F 💙</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= COVER DEPAN ================= -->
+<div class="cover" id="cover">
+  <div class="cover-card">
+    <p class="cover-title">Ada pesan buat kamu 💌</p>
+    <img src="mail.png" alt="Surat" class="mail-img">
+    <p class="cover-open">Tekan untuk membuka</p>
+  </div>
+</div>
+
+<!-- ================= WINDOW UCAPAN ================= -->
+<div class="window hidden" id="window">
+
+  <div class="window-header">
+    <span></span>
+    <div class="controls">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="window-body">
+    <img id="chibi" class="chibi" alt="chibi">
+    <p id="text"></p>
+    <button id="nextBtn">OK</button>
+  </div>
+
+</div>
+
+<!-- ================= MUSIK ================= -->
+<audio id="musik" loop>
+  <source src="musik/cute.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+<!-- ================= SCRIPT COVER ================= -->
+<script>
+  const cover = document.getElementById("cover");
+  const windowBox = document.getElementById("window");
+  const musik = document.getElementById("musik");
+
+  cover.addEventListener("click", () => {
+    musik.play();                 // ▶️ play musik
+    cover.classList.add("fade");  // animasi fade
+    setTimeout(() => {
+      cover.style.display = "none";
+      windowBox.classList.remove("hidden");
+    }, 600);
+  });
+</script>
+
+</body>
+</html>
